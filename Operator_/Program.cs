@@ -37,13 +37,35 @@
                                 Console.WriteLine($"Вывод: {firstNumber * secondNumber}");
                                 break;
 
-                            case '/':
+                            case '/' when secondNumber != 0:
                                 Console.WriteLine($"Вывод: {firstNumber / secondNumber}");
                                 break;
 
+                            case '/':
+                                if (secondNumber > 0)
+                                {
+                                    Console.WriteLine($"Вывод: {firstNumber / secondNumber}");
+                                    break;
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine("На ноль делить нельзя!");
+                                    break;
+                                }
+
                             case '%':
-                                Console.WriteLine($"Вывод: {firstNumber % secondNumber}");
-                                break;
+                                if (secondNumber > 0)
+                                {
+                                    Console.WriteLine($"Вывод: {firstNumber % secondNumber}");
+                                    break;
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine("На ноль делить нельзя!");
+                                    break;
+                                }
 
                             default:
                                 Console.WriteLine("Введен некорректный оператор!");
