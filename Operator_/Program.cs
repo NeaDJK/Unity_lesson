@@ -4,16 +4,64 @@
     {
         static void Main(string[] args)
         {
-            int age = 16;
-            Console.Write("Введите ваш рост: ");
-            float.TryParse(Console.ReadLine(), out float height);
+            int choise = 0;
 
-            Console.Write("Введите ваш вес: ");
-            float.TryParse(Console.ReadLine(), out float weight);
+            do 
+            {
+                Console.Write("[1] - Калькулятор\n[2] - Выход\nВведите номер команды: ");
+                Int32.TryParse(Console.ReadLine(), out choise);
 
-            float BMI = weight / (height * height);
+                switch (choise)
+                {
+                    case 1:
+                        Console.Write("Введите первое число: ");
+                        double.TryParse(Console.ReadLine(), out double firstNumber);
 
-            Console.WriteLine(BMI);
+                        Console.Write("Введите второе число: ");
+                        double.TryParse(Console.ReadLine(), out double secondNumber);
+
+                        Console.Write("Введите оператор (+, -, *, /, %): ");
+                        char.TryParse(Console.ReadLine(), out char operation);
+
+                        switch (operation)
+                        {
+                            case '+':
+                                Console.WriteLine($"Вывод: {firstNumber + secondNumber}");
+                                break;
+
+                            case '-':
+                                Console.WriteLine($"Вывод: {firstNumber - secondNumber}");
+                                break;
+
+                            case '*':
+                                Console.WriteLine($"Вывод: {firstNumber * secondNumber}");
+                                break;
+
+                            case '/':
+                                Console.WriteLine($"Вывод: {firstNumber / secondNumber}");
+                                break;
+
+                            case '%':
+                                Console.WriteLine($"Вывод: {firstNumber % secondNumber}");
+                                break;
+
+                            default:
+                                Console.WriteLine("Введен некорректный оператор!");
+                                break;
+                        }
+                        break;
+
+                    case 2:
+                        Console.WriteLine("До свидания!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Введена некорректная команда!");
+                        break;
+                }
+            }
+
+            while (choise != 2);
         }
     }
 }
