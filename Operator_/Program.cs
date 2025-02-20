@@ -10,6 +10,7 @@
             {
                 Console.Write("[1] - Калькулятор\n[2] - Выход\nВведите номер команды: ");
                 Int32.TryParse(Console.ReadLine(), out choise);
+                Console.WriteLine();
 
                 switch (choise)
                 {
@@ -26,49 +27,45 @@
                         switch (operation)
                         {
                             case '+':
-                                Console.WriteLine($"Вывод: {firstNumber + secondNumber}");
+                                Console.WriteLine($"Вывод: {firstNumber + secondNumber} \n");
                                 break;
 
                             case '-':
-                                Console.WriteLine($"Вывод: {firstNumber - secondNumber}");
+                                Console.WriteLine($"Вывод: {firstNumber - secondNumber} \n");
                                 break;
 
                             case '*':
-                                Console.WriteLine($"Вывод: {firstNumber * secondNumber}");
-                                break;
-
-                            case '/' when secondNumber != 0:
-                                Console.WriteLine($"Вывод: {firstNumber / secondNumber}");
+                                Console.WriteLine($"Вывод: {firstNumber * secondNumber} \n");
                                 break;
 
                             case '/':
                                 if (secondNumber > 0)
                                 {
-                                    Console.WriteLine($"Вывод: {firstNumber / secondNumber}");
+                                    Console.WriteLine($"Вывод: {firstNumber / secondNumber} \n");
                                     break;
                                 }
 
                                 else
                                 {
-                                    Console.WriteLine("На ноль делить нельзя!");
+                                    Console.WriteLine("На ноль делить нельзя! \n");
                                     break;
                                 }
 
                             case '%':
                                 if (secondNumber > 0)
                                 {
-                                    Console.WriteLine($"Вывод: {firstNumber % secondNumber}");
+                                    Console.WriteLine($"Вывод: {firstNumber % secondNumber} \n");
                                     break;
                                 }
 
                                 else
                                 {
-                                    Console.WriteLine("На ноль делить нельзя!");
+                                    Console.WriteLine("На ноль делить нельзя! \n");
                                     break;
                                 }
 
                             default:
-                                Console.WriteLine("Введен некорректный оператор!");
+                                Console.WriteLine("Введен некорректный оператор! \n");
                                 break;
                         }
                         break;
@@ -78,7 +75,7 @@
                         break;
 
                     default:
-                        Console.WriteLine("Введена некорректная команда!");
+                        Console.WriteLine("Введена некорректная команда! \n");
                         break;
                 }
             }
