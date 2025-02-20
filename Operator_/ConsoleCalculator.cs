@@ -1,6 +1,6 @@
 ﻿namespace Operator_
 {
-    internal class Program
+    internal class ConsoleCalculator
     {
         static void Main(string[] args)
         {
